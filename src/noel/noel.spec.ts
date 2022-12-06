@@ -1,5 +1,7 @@
 import { drawChristmasTree } from './noel';
 
+// kata: https://ccd-school.de/en/coding-dojo/function-katas/christmas-tree/
+
 describe('christmasTree', () => {
   it('should display trunk when size 0', () => {
     console.log(drawChristmasTree(0));
