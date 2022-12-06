@@ -34,4 +34,11 @@ describe('christmasTree', () => {
       '    X    \n   XXX   \n  XXXXX  \n XXXXXXX \nXXXXXXXXX\n    X    '
     );
   });
+
+  it('should display tree with one branch when size 5', () => {
+    console.log(drawChristmasTree(5, true));
+    expect(drawChristmasTree(5, true)).toBe(
+      '    *    \n    X    \n   XXX   \n  XXXXX  \n XXXXXXX \nXXXXXXXXX\n    X    '
+    );
+  });
 });

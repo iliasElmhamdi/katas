@@ -2,7 +2,7 @@ const createString = (size: number, elt: string) => {
   return new Array(size).fill(elt).join('');
 };
 
-export function drawChristmasTree(size: number) {
+export function drawChristmasTree(size: number, hasStart = false) {
   if (size === 0) return 'X';
   const base =
     createString(size - 1, ' ') +
@@ -17,5 +17,11 @@ export function drawChristmasTree(size: number) {
     tree += `${step}\n`;
   }
 
-  return tree + base;
+  const star = `${
+    createString(size - 1, ' ') +
+    createString(1, '*') +
+    createString(size - 1, ' ')
+  }\n`;
+
+  return (hasStart ? star : '') + tree + base;
 }
