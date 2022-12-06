@@ -1,11 +1,21 @@
+const createString = (size: number, elt: string) => {
+  return new Array(size).fill(elt).join('');
+};
+
 export function drawChristmasTree(size: number) {
   if (size === 0) return 'X';
-  let tree = '';
+  const base =
+    createString(size - 1, ' ') +
+    createString(1, 'X') +
+    createString(size - 1, ' ');
+  let tree = `${base}\n`;
   for (let k = 1; k < size; k++) {
-    const length = size - k;
-    const step = `${new Array(length * 2).fill('X').join('')}`;
+    const step =
+      createString(size - k - 1, ' ') +
+      createString(3 + 2 * (k - 1), 'X') +
+      createString(size - k - 1, ' ');
     tree += `${step}\n`;
   }
-  const trunk = `${new Array(size - 1).fill(' ').join('')}X`;
-  return `${tree}${trunk}`;
+
+  return tree + base;
 }
